@@ -4,5 +4,5 @@ CREATE TABLE ODONTOLOGO (ID INT AUTO_INCREMENT PRIMARY KEY, numeroMatricula INT 
 -- para test --
 INSERT
 INTO ODONTOLOGO(numeroMatricula, nombre , apellido)
-VALUES  (742, 'Pablo', 'Mármol'),
-        (42, 'Bimba', ' y Lola');
+VALUES  (742, 'Pablo', 'Lopez'),
+        (42, 'Juan', 'Rodriguez');

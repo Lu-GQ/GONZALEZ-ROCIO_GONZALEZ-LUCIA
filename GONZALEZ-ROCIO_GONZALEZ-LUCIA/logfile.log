@@ -1,0 +1,66 @@
+[2024-02-23 16:45:58] [ INFO ] [OdontologoDaoH2:89] Listado de todos los odontologos: [Odontologo{id=0, numeroMatricula=1, nombre='Pablo', apellido='Mármol'}, Odontologo{id=0, numeroMatricula=2, nombre='Bimba', apellido=' y Lola'}]
+[2024-02-23 16:45:58] [ INFO ] [OdontologoDaoMemory:26] Odontologo guardado: Odontologo{id=1, numeroMatricula=714, nombre='Ana', apellido='Gutierrez'}
+[2024-02-23 16:45:58] [ INFO ] [OdontologoDaoMemory:26] Odontologo guardado: Odontologo{id=1, numeroMatricula=714, nombre='Ana', apellido='Gutierrez'}
+[2024-02-23 16:45:58] [ INFO ] [OdontologoDaoMemory:26] Odontologo guardado: Odontologo{id=2, numeroMatricula=3343, nombre='Jorge', apellido='Gutierrez'}
+[2024-02-23 16:47:19] [ INFO ] [OdontologoDaoH2:89] Listado de todos los odontologos: [Odontologo{id=0, numeroMatricula=1, nombre='Pablo', apellido='Mármol'}, Odontologo{id=0, numeroMatricula=2, nombre='Bimba', apellido=' y Lola'}]
+[2024-02-23 16:47:19] [ INFO ] [OdontologoDaoMemory:26] Odontologo guardado: Odontologo{id=1, numeroMatricula=714, nombre='Ana', apellido='Gutierrez'}
+[2024-02-23 16:47:19] [ INFO ] [OdontologoDaoMemory:26] Odontologo guardado: Odontologo{id=1, numeroMatricula=714, nombre='Ana', apellido='Gutierrez'}
+[2024-02-23 16:47:19] [ INFO ] [OdontologoDaoMemory:26] Odontologo guardado: Odontologo{id=2, numeroMatricula=3343, nombre='Jorge', apellido='Gutierrez'}
+[2024-02-23 16:48:54] [ INFO ] [OdontologoDaoH2:89] Listado de todos los odontologos: [Odontologo{id=0, numeroMatricula=1, nombre='Pablo', apellido='Mármol'}, Odontologo{id=0, numeroMatricula=2, nombre='Bimba', apellido=' y Lola'}]
+[2024-02-23 16:48:55] [ INFO ] [OdontologoDaoMemory:26] Odontologo guardado: Odontologo{id=1, numeroMatricula=714, nombre='Ana', apellido='Gutierrez'}
+[2024-02-23 16:48:55] [ INFO ] [OdontologoDaoMemory:26] Odontologo guardado: Odontologo{id=1, numeroMatricula=714, nombre='Ana', apellido='Gutierrez'}
+[2024-02-23 16:48:55] [ INFO ] [OdontologoDaoMemory:26] Odontologo guardado: Odontologo{id=2, numeroMatricula=3343, nombre='Jorge', apellido='Gutierrez'}
+[2024-02-23 16:53:26] [ ERROR] [OdontologoDaoH2:94] La base de datos puede que ya esté siendo utilizada: "/Users/diegomarcher/test.mv.db". Soluciones Posibles: cierre todas las otras conexiones; use el modo server
+Database may be already in use: "/Users/diegomarcher/test.mv.db". Possible solutions: close all other connection(s); use the server mode [90020-224]
+[2024-02-23 16:53:26] [ ERROR] [OdontologoDaoH2:101] Ha ocurrido un error al intentar cerrar la base de datos. Cannot invoke "java.sql.Connection.close()" because "connection" is null
+[2024-02-23 16:53:26] [ INFO ] [OdontologoDaoMemory:26] Odontologo guardado: Odontologo{id=1, numeroMatricula=714, nombre='Ana', apellido='Gutierrez'}
+[2024-02-23 16:53:26] [ INFO ] [OdontologoDaoMemory:26] Odontologo guardado: Odontologo{id=1, numeroMatricula=714, nombre='Ana', apellido='Gutierrez'}
+[2024-02-23 16:53:26] [ INFO ] [OdontologoDaoMemory:26] Odontologo guardado: Odontologo{id=2, numeroMatricula=3343, nombre='Jorge', apellido='Gutierrez'}
+[2024-02-23 16:53:50] [ INFO ] [OdontologoDaoH2:89] Listado de todos los odontologos: [Odontologo{id=0, numeroMatricula=1, nombre='Pablo', apellido='Mármol'}, Odontologo{id=0, numeroMatricula=2, nombre='Bimba', apellido=' y Lola'}]
+[2024-02-23 16:53:50] [ INFO ] [OdontologoDaoMemory:26] Odontologo guardado: Odontologo{id=1, numeroMatricula=714, nombre='Ana', apellido='Gutierrez'}
+[2024-02-23 16:53:50] [ INFO ] [OdontologoDaoMemory:26] Odontologo guardado: Odontologo{id=1, numeroMatricula=714, nombre='Ana', apellido='Gutierrez'}
+[2024-02-23 16:53:50] [ INFO ] [OdontologoDaoMemory:26] Odontologo guardado: Odontologo{id=2, numeroMatricula=3343, nombre='Jorge', apellido='Gutierrez'}
+[2024-02-23 17:05:54] [ ERROR] [OdontologoDaoH2:94] La base de datos puede que ya esté siendo utilizada: "/Users/diegomarcher/test.mv.db". Soluciones Posibles: cierre todas las otras conexiones; use el modo server
+Database may be already in use: "/Users/diegomarcher/test.mv.db". Possible solutions: close all other connection(s); use the server mode [90020-224]
+[2024-02-23 17:05:54] [ ERROR] [OdontologoDaoH2:101] Ha ocurrido un error al intentar cerrar la base de datos. Cannot invoke "java.sql.Connection.close()" because "connection" is null
+[2024-02-23 17:05:54] [ INFO ] [OdontologoDaoMemory:26] Odontologo guardado: Odontologo{id=1, numeroMatricula=714, nombre='Ana', apellido='Gutierrez'}
+[2024-02-23 17:05:54] [ INFO ] [OdontologoDaoMemory:26] Odontologo guardado: Odontologo{id=1, numeroMatricula=714, nombre='Ana', apellido='Gutierrez'}
+[2024-02-23 17:05:54] [ INFO ] [OdontologoDaoMemory:26] Odontologo guardado: Odontologo{id=2, numeroMatricula=3343, nombre='Jorge', apellido='Gutierrez'}
+[2024-02-23 18:58:29] [ INFO ] [OdontologoDaoH2:89] Listado de todos los odontologos: [Odontologo{id=0, numeroMatricula=1, nombre='Pablo', apellido='Mármol'}, Odontologo{id=0, numeroMatricula=2, nombre='Bimba', apellido=' y Lola'}]
+[2024-02-23 18:58:29] [ INFO ] [OdontologoDaoMemory:26] Odontologo guardado: Odontologo{id=1, numeroMatricula=714, nombre='Ana', apellido='Gutierrez'}
+[2024-02-23 18:58:29] [ INFO ] [OdontologoDaoMemory:26] Odontologo guardado: Odontologo{id=1, numeroMatricula=714, nombre='Ana', apellido='Gutierrez'}
+[2024-02-23 18:58:29] [ INFO ] [OdontologoDaoMemory:26] Odontologo guardado: Odontologo{id=2, numeroMatricula=3343, nombre='Jorge', apellido='Gutierrez'}
+[2024-02-23 18:59:16] [ ERROR] [OdontologoDaoH2:94] La base de datos puede que ya esté siendo utilizada: "/Users/diegomarcher/test.mv.db". Soluciones Posibles: cierre todas las otras conexiones; use el modo server
+Database may be already in use: "/Users/diegomarcher/test.mv.db". Possible solutions: close all other connection(s); use the server mode [90020-224]
+[2024-02-23 18:59:16] [ ERROR] [OdontologoDaoH2:101] Ha ocurrido un error al intentar cerrar la base de datos. Cannot invoke "java.sql.Connection.close()" because "connection" is null
+[2024-02-23 18:59:16] [ INFO ] [OdontologoDaoMemory:26] Odontologo guardado: Odontologo{id=1, numeroMatricula=714, nombre='Ana', apellido='Gutierrez'}
+[2024-02-23 18:59:16] [ INFO ] [OdontologoDaoMemory:26] Odontologo guardado: Odontologo{id=1, numeroMatricula=714, nombre='Ana', apellido='Gutierrez'}
+[2024-02-23 18:59:16] [ INFO ] [OdontologoDaoMemory:26] Odontologo guardado: Odontologo{id=2, numeroMatricula=3343, nombre='Jorge', apellido='Gutierrez'}
+[2024-02-23 18:59:31] [ INFO ] [OdontologoDaoH2:89] Listado de todos los odontologos: [Odontologo{id=0, numeroMatricula=1, nombre='Pablo', apellido='Mármol'}, Odontologo{id=0, numeroMatricula=2, nombre='Bimba', apellido=' y Lola'}]
+[2024-02-23 18:59:32] [ INFO ] [OdontologoDaoMemory:26] Odontologo guardado: Odontologo{id=1, numeroMatricula=714, nombre='Ana', apellido='Gutierrez'}
+[2024-02-23 18:59:32] [ INFO ] [OdontologoDaoMemory:26] Odontologo guardado: Odontologo{id=1, numeroMatricula=714, nombre='Ana', apellido='Gutierrez'}
+[2024-02-23 18:59:32] [ INFO ] [OdontologoDaoMemory:26] Odontologo guardado: Odontologo{id=2, numeroMatricula=3343, nombre='Jorge', apellido='Gutierrez'}
+[2024-02-23 19:12:49] [ INFO ] [OdontologoDaoH2:89] Listado de todos los odontologos: [Odontologo{id=0, numeroMatricula=1, nombre='Pablo', apellido='Mármol'}, Odontologo{id=0, numeroMatricula=2, nombre='Bimba', apellido=' y Lola'}]
+[2024-02-23 19:12:49] [ INFO ] [OdontologoDaoMemory:26] Odontologo guardado: Odontologo{id=1, numeroMatricula=714, nombre='Ana', apellido='Gutierrez'}
+[2024-02-23 19:12:49] [ INFO ] [OdontologoDaoMemory:26] Odontologo guardado: Odontologo{id=1, numeroMatricula=714, nombre='Ana', apellido='Gutierrez'}
+[2024-02-23 19:12:49] [ INFO ] [OdontologoDaoMemory:26] Odontologo guardado: Odontologo{id=2, numeroMatricula=3343, nombre='Jorge', apellido='Gutierrez'}
+[2024-02-23 19:15:25] [ INFO ] [OdontologoDaoH2:89] Listado de todos los odontologos: [Odontologo{id=0, numeroMatricula=1, nombre='Pablo', apellido='Mármol'}, Odontologo{id=0, numeroMatricula=2, nombre='Bimba', apellido=' y Lola'}]
+[2024-02-23 19:15:25] [ INFO ] [OdontologoDaoMemory:26] Odontologo guardado: Odontologo{id=1, numeroMatricula=714, nombre='Ana', apellido='Gutierrez'}
+[2024-02-23 19:15:25] [ INFO ] [OdontologoDaoMemory:26] Odontologo guardado: Odontologo{id=1, numeroMatricula=714, nombre='Ana', apellido='Gutierrez'}
+[2024-02-23 19:15:25] [ INFO ] [OdontologoDaoMemory:26] Odontologo guardado: Odontologo{id=2, numeroMatricula=3343, nombre='Jorge', apellido='Gutierrez'}
+[2024-02-23 19:18:30] [ INFO ] [OdontologoDaoH2:89] Listado de todos los odontologos: [Odontologo{id=0, numeroMatricula=1, nombre='Pablo', apellido='Mármol'}, Odontologo{id=0, numeroMatricula=2, nombre='Bimba', apellido=' y Lola'}]
+[2024-02-23 19:18:30] [ INFO ] [OdontologoDaoMemory:26] Odontologo guardado: Odontologo{id=1, numeroMatricula=714, nombre='Ana', apellido='Gutierrez'}
+[2024-02-23 19:18:30] [ INFO ] [OdontologoDaoMemory:26] Odontologo guardado: Odontologo{id=1, numeroMatricula=714, nombre='Ana', apellido='Gutierrez'}
+[2024-02-23 19:18:30] [ INFO ] [OdontologoDaoMemory:26] Odontologo guardado: Odontologo{id=2, numeroMatricula=3343, nombre='Jorge', apellido='Gutierrez'}
+[2024-02-23 19:19:01] [ INFO ] [OdontologoDaoH2:89] Listado de todos los odontologos: [Odontologo{id=0, numeroMatricula=1, nombre='Pablo', apellido='Mármol'}, Odontologo{id=0, numeroMatricula=2, nombre='Bimba', apellido=' y Lola'}]
+[2024-02-23 19:19:01] [ INFO ] [OdontologoDaoMemory:26] Odontologo guardado: Odontologo{id=1, numeroMatricula=714, nombre='Ana', apellido='Gutierrez'}
+[2024-02-23 19:19:01] [ INFO ] [OdontologoDaoMemory:26] Odontologo guardado: Odontologo{id=1, numeroMatricula=714, nombre='Ana', apellido='Gutierrez'}
+[2024-02-23 19:19:01] [ INFO ] [OdontologoDaoMemory:26] Odontologo guardado: Odontologo{id=2, numeroMatricula=3343, nombre='Jorge', apellido='Gutierrez'}
+[2024-02-23 19:31:56] [ INFO ] [OdontologoDaoH2:89] Listado de todos los odontologos: [Odontologo{id=0, numeroMatricula=1, nombre='Pablo', apellido='Lopez'}, Odontologo{id=0, numeroMatricula=2, nombre='Juan', apellido='Rodriguez'}]
+[2024-02-23 19:31:56] [ INFO ] [OdontologoDaoMemory:26] Odontologo guardado: Odontologo{id=1, numeroMatricula=714, nombre='Ana', apellido='Gutierrez'}
+[2024-02-23 19:31:56] [ INFO ] [OdontologoDaoMemory:26] Odontologo guardado: Odontologo{id=1, numeroMatricula=714, nombre='Ana', apellido='Gutierrez'}
+[2024-02-23 19:31:56] [ INFO ] [OdontologoDaoMemory:26] Odontologo guardado: Odontologo{id=2, numeroMatricula=3343, nombre='Jorge', apellido='Gutierrez'}
+[2024-02-23 19:37:42] [ INFO ] [OdontologoDaoH2:89] Listado de todos los odontologos: [Odontologo{id=1, numeroMatricula=742, nombre='Pablo', apellido='Lopez'}, Odontologo{id=2, numeroMatricula=42, nombre='Juan', apellido='Rodriguez'}]
+[2024-02-23 19:37:42] [ INFO ] [OdontologoDaoMemory:26] Odontologo guardado: Odontologo{id=1, numeroMatricula=714, nombre='Ana', apellido='Gutierrez'}
+[2024-02-23 19:37:42] [ INFO ] [OdontologoDaoMemory:26] Odontologo guardado: Odontologo{id=1, numeroMatricula=714, nombre='Ana', apellido='Gutierrez'}
+[2024-02-23 19:37:42] [ INFO ] [OdontologoDaoMemory:26] Odontologo guardado: Odontologo{id=2, numeroMatricula=3343, nombre='Jorge', apellido='Gutierrez'}
