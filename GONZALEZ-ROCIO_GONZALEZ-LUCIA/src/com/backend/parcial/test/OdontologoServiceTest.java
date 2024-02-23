@@ -19,7 +19,8 @@ public class OdontologoServiceTest {
     @Test
     @Ignore
     public void deberiaRegistrarUnOdontologoYRetornarUnIdEnH2() {
-        //  hk kh hk k kj kj jk
+        //  Ignoramos este test ya que afecta los datos de la DB y luego el test `deberiaListarOdontologosDeH2`
+        //  falla porque no se puede predecir la cantidad de elementos en la table ODONTOLOGO
         Odontologo odontologo = new Odontologo(714, "Ana", "Gutierrez");
         odontologoService = new OdontologoService(new OdontologoDaoH2());
         Odontologo odontologoRegistrado = odontologoService.registrarOdontologo(odontologo);
