@@ -1,6 +1,0 @@
-[2024-02-21 16:29:00] [ ERROR] [Main:26] Error de Sintaxis en sentencia SQL "select *[*]* from TEST"
-Syntax error in SQL statement "select *[*]* from TEST"; SQL statement:
-select ** from TEST [42000-224]
-[2024-02-22 10:16:18] [ ERROR] [Main:26] Error de Sintaxis en sentencia SQL "select *[*]* from TEST"
-Syntax error in SQL statement "select *[*]* from TEST"; SQL statement:
-select ** from TEST [42000-224]

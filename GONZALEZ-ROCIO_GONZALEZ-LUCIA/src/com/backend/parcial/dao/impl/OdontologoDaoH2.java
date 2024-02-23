@@ -79,7 +79,7 @@ public class OdontologoDaoH2 implements IDao<Odontologo> {
 
         try{
             connection = H2Connection.getConnection();
-            PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM PACIENTES");
+            PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM ODONTOLOGO");
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()){
                 Odontologo odontologo = crearObjetoOdontologo(resultSet);
