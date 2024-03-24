@@ -15,7 +15,7 @@ public interface ITurnoService {
 
     TurnoSalidaDto buscarTurnoPorId(Long id);
 
-    void eliminarTurno(Long id);
+    void eliminarTurno(Long id) throws ResourceNotFoundException;;
 
     TurnoSalidaDto modificarTurno(TurnoEntradaDto turnoEntradaDto, Long id);
 }

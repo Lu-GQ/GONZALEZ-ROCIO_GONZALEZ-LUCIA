@@ -1,5 +1,7 @@
 package com.backend.clinicaodontologica.service.impl;
 
+import com.backend.clinicaodontologica.entity.Paciente;
+import com.backend.clinicaodontologica.exceptions.ResourceNotFoundException;
 import com.backend.clinicaodontologica.service.ITurnoService;
 import com.backend.clinicaodontologica.dto.entrada.TurnoEntradaDto;
 import com.backend.clinicaodontologica.dto.salida.OdontologoSalidaDto;
@@ -8,6 +10,7 @@ import com.backend.clinicaodontologica.dto.salida.TurnoSalidaDto;
 import com.backend.clinicaodontologica.entity.Turno;
 import com.backend.clinicaodontologica.exceptions.BadRequestException;
 import com.backend.clinicaodontologica.repository.TurnoRepository;
+import com.backend.clinicaodontologica.utils.JsonPrinter;
 import org.modelmapper.ModelMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -67,17 +70,43 @@ public class TurnoService implements ITurnoService {
 
     @Override
     public List<TurnoSalidaDto> listarTurnos() {
-        return null;
+
+        List<TurnoSalidaDto> turnosSalidaDto = turnoRepository.findAll()
+                .stream()
+                .map(turno -> modelMapper.map(turno, TurnoSalidaDto.class))
+                .toList();
+
+        LOGGER.info("Listado de todos los turnos: {}", JsonPrinter.toString(turnosSalidaDto));
+        return turnosSalidaDto;
     }
 
     @Override
     public TurnoSalidaDto buscarTurnoPorId(Long id) {
-        return null;
+
+        Turno turnoBuscado = turnoRepository.findById(id).orElse(null);
+        TurnoSalidaDto turnoEncontrado = null;
+
+        if (turnoBuscado != null) {
+            turnoEncontrado = modelMapper.map(turnoBuscado, TurnoSalidaDto.class);
+            LOGGER.info("Turno encontrado: {}", JsonPrinter.toString(turnoEncontrado));
+
+        } else
+            LOGGER.error("No se ha encontrado el turno con id {}", id);
+
+
+        return turnoEncontrado;
     }
 
     @Override
-    public void eliminarTurno(Long id) {
+    public void eliminarTurno(Long id) throws ResourceNotFoundException {
 
+        if (buscarTurnoPorId(id) != null) {
+            turnoRepository.deleteById(id);
+            LOGGER.warn("Se ha eliminado el turno con id {}", id);
+        } else {
+            LOGGER.error("No se ha encontrado el turno con id {}", id);
+            throw new ResourceNotFoundException("No existe registro de turno con id " + id);
+        }
     }
 
     @Override
