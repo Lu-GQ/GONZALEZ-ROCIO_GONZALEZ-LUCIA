@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clínica Odontológica</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        h2 {
+            color: #555;
+        }
+
+        form {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #777;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        button {
+            padding: 8px;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        button {
+            background-color: #007b82;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #004a4f;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 5px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+<h1>Clínica Odontológica</h1>
+
+<h2>Registrar Paciente</h2>
+<form id="registroForm">
+    <label for="nombre">Nombre:</label>
+    <input type="text" id="nombre" name="nombre" required><br>
+
+    <label for="apellido">Apellido:</label>
+    <input type="text" id="apellido" name="apellido" required><br>
+
+    <label for="dni">DNI:</label>
+    <input type="number" id="dni" name="dni" required><br>
+
+    <label for="fechaIngreso">Fecha de Ingreso:</label>
+    <input type="date" id="fechaIngreso" name="fechaIngreso" required><br>
+
+    <label for="calle">Calle:</label>
+    <input type="text" id="calle" name="calle" required><br>
+
+    <label for="numero">Número:</label>
+    <input type="number" id="numero" name="numero" required><br>
+
+    <label for="localidad">Localidad:</label>
+    <input type="text" id="localidad" name="localidad" required><br>
+
+    <label for="provincia">Provincia:</label>
+    <input type="text" id="provincia" name="provincia" required><br>
+
+    <button type="submit">Registrar</button>
+</form>
+
+
+<h2>Listar Pacientes</h2>
+<ul id="listaPacientes"></ul>
+
+<script>
+    // Obtener el formulario por su ID
+const form = document.getElementById('registroForm');
+
+// Manejar el envío del formulario de registro de paciente
+form.addEventListener('submit', async function(event) {
+    event.preventDefault(); // Evitar que el formulario se envíe normalmente
+
+    // Obtener valores del formulario
+    const nombre = document.getElementById('nombre').value;
+    const apellido = document.getElementById('apellido').value;
+    const dni = document.getElementById('dni').value;
+    const fechaIngresoInput = document.getElementById('fechaIngreso');
+    const calle = document.getElementById('calle').value;
+    const numero = document.getElementById('numero').value;
+    const localidad = document.getElementById('localidad').value;
+    const provincia = document.getElementById('provincia').value;
+
+    // Obtener fecha actual
+    const fechaActual = new Date();
+    const fechaIngreso = new Date(fechaIngresoInput.value);
+
+    // Validar si la fecha de ingreso es anterior a la fecha actual
+    if (fechaIngreso < fechaActual) {
+        alert('La fecha de ingreso no puede ser anterior a la fecha actual.');
+        return; // Detener el proceso de envío del formulario
+    }
+
+    // Crear objeto paciente
+    const paciente = {
+        nombre: nombre,
+        apellido: apellido,
+        dni: parseInt(dni),
+        fechaIngreso: fechaIngresoInput.value,
+        domicilioEntradaDto: {
+            calle: calle,
+            numero: parseInt(numero),
+            localidad: localidad,
+            provincia: provincia
+        }
+    };
+
+    // Llamar a registrarPaciente
+    await registrarPaciente(paciente);
+
+    // Limpiar el formulario
+    form.reset();
+
+    // Volver a listar pacientes después de registrar uno nuevo
+    await cargarDatosPacientes();
+});
+
+
+
+    // Función para manejar errores de respuesta HTTP
+function handleErrors(response) {
+    if (!response.ok) {
+        throw Error(response.statusText);
+    }
+    return response;
+}
+
+// Función para consumir el servicio de registrar paciente
+async function registrarPaciente(paciente) {
+    const response = await fetch('/pacientes/registrar', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(paciente)
+    });
+    handleErrors(response);
+    return response.json();
+}
+
+// Función para consumir el servicio de listar pacientes
+async function listarPacientes() {
+    const response = await fetch('/pacientes');
+    handleErrors(response);
+    return response.json();
+}
+
+// Función para consumir el servicio de buscar paciente por ID
+async function buscarPacientePorId(id) {
+    const response = await fetch(`/buscarPacientePorId/${id}`);
+    handleErrors(response);
+    return response.json();
+}
+
+// Función para consumir el servicio de eliminar paciente por ID
+async function eliminarPaciente(id) {
+    const response = await fetch(`/eliminarPaciente/${id}`, {
+        method: 'DELETE'
+    });
+    handleErrors(response);
+}
+
+// Función para consumir el servicio de modificar paciente por ID
+async function modificarPaciente(paciente, id) {
+    const response = await fetch(`/modificarPaciente/${id}`, {
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(paciente)
+    });
+    handleErrors(response);
+    return response.json();
+}
+
+    // Función para mostrar la lista de pacientes en el HTML
+function mostrarListaPacientes(pacientes) {
+    const listaPacientesElement = document.getElementById('listaPacientes');
+
+    // Limpiar la lista antes de agregar nuevos elementos
+    listaPacientesElement.innerHTML = '';
+    console.log("mostrarListaPacientes")
+    console.log(pacientes)
+    // Iterar sobre la lista de pacientes y agregar cada uno como un elemento de lista
+    pacientes.forEach(function(paciente) {
+        const listItem = document.createElement('li');
+        listItem.textContent = `Nombre: ${paciente.nombre}, Apellido: ${paciente.apellido}, DNI: ${paciente.dni}, Fecha de Ingreso: ${paciente.fechaIngreso}, Domicilio: ${paciente.domicilioSalidaDto.calle} ${paciente.domicilioSalidaDto.numero}, ${paciente.domicilioSalidaDto.localidad}, ${paciente.domicilioSalidaDto.provincia}`;
+        listaPacientesElement.appendChild(listItem);
+    });
+}
+
+    // Llamar a listarPacientes y mostrar la lista en el HTML después de cargar la página
+document.addEventListener('DOMContentLoaded', async function() {
+    cargarDatosPacientes();
+});
+
+    async function cargarDatosPacientes() {
+        const pacientes = await listarPacientes();
+        mostrarListaPacientes(pacientes);
+    }
+
+</script>
+</body>
+</html>
