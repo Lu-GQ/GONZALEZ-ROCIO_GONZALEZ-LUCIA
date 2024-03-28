@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clínica Odontológica</title>
+    <script src="js/index.js"></script>
+    <link rel="stylesheet" href="css/index.css">
+
+</head>
+<body>
+<h1>Clínica Odontológica</h1>
+
+<h2>Registrar Paciente</h2>
+<form id="registroForm">
+    <label for="nombre">Nombre:</label>
+    <input type="text" id="nombre" name="nombre" required><br>
+
+    <label for="apellido">Apellido:</label>
+    <input type="text" id="apellido" name="apellido" required><br>
+
+    <label for="dni">DNI:</label>
+    <input type="number" id="dni" name="dni" required><br>
+
+    <label for="fechaIngreso">Fecha de Ingreso:</label>
+    <input type="date" id="fechaIngreso" name="fechaIngreso" required><br>
+
+    <label for="calle">Calle:</label>
+    <input type="text" id="calle" name="calle" required><br>
+
+    <label for="numero">Número:</label>
+    <input type="number" id="numero" name="numero" required><br>
+
+    <label for="localidad">Localidad:</label>
+    <input type="text" id="localidad" name="localidad" required><br>
+
+    <label for="provincia">Provincia:</label>
+    <input type="text" id="provincia" name="provincia" required><br>
+
+    <button type="submit">Registrar</button>
+</form>
+
+
+<h2>Listar Pacientes</h2>
+<ul id="listaPacientes"></ul>
+
+</body>
+</html>
