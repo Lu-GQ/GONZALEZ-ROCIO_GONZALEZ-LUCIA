@@ -28,7 +28,7 @@ public class PacienteController {
         return new ResponseEntity<>(pacienteService.listarPacientes(), HttpStatus.OK);
     }
 
-    @GetMapping("/{id}") //localhost:8080/pacientes/x
+    @GetMapping("/{id}") //localhost:8081/pacientes/x
     public ResponseEntity<PacienteSalidaDto> buscarPacientePorId(@PathVariable Long id) {
         return new ResponseEntity<>(pacienteService.buscarPacientePorId(id), HttpStatus.OK);
     }
@@ -42,13 +42,13 @@ public class PacienteController {
 
 
     //PUT
-    @PutMapping("/actualizar/{id}")//localhost:8080/pacientes/actualizar/x
+    @PutMapping("/actualizar/{id}")//localhost:8081/pacientes/actualizar/x
     public ResponseEntity<PacienteSalidaDto> actualizarPaciente(@RequestBody @Valid PacienteEntradaDto paciente, @PathVariable Long id) throws ResourceNotFoundException {
         return new ResponseEntity<>(pacienteService.modificarPaciente(paciente, id), HttpStatus.OK);
     }
 
     //DELETE
-    @DeleteMapping("/eliminar")//localhost:8080/pacientes/eliminar?id=x
+    @DeleteMapping("/eliminar")//localhost:8081/pacientes/eliminar?id=x
     public ResponseEntity<?> eliminarPaciente(@RequestParam Long id) throws ResourceNotFoundException {
         pacienteService.eliminarPaciente(id);
         return new ResponseEntity<>("Paciente eliminado correctamente", HttpStatus.NO_CONTENT);
