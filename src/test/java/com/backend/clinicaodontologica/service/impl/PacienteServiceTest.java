@@ -45,9 +45,11 @@ class PacienteServiceTest {
     @Test
     @Order(2)
     void deberiaEliminarseElPacienteConId1() {
-        assertDoesNotThrow(() -> pacienteService.eliminarPaciente(1L));
         List<PacienteSalidaDto> pacientes = pacienteService.listarPacientes();
-        assertTrue(pacientes.isEmpty());
+        int pacientesCount = pacientes.size();
+        assertDoesNotThrow(() -> pacienteService.eliminarPaciente(1L));
+        pacientes = pacienteService.listarPacientes();
+        assertEquals(pacientesCount - 1, pacientes.size());
     }
 
 

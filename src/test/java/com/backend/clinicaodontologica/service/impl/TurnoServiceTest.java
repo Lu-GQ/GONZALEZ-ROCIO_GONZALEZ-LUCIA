@@ -48,8 +48,8 @@ class TurnoServiceTest {
         TurnoSalidaDto turnoSalida = assertDoesNotThrow(() -> turnoService.registrarTurno(turno));
 
         assertNotNull(turnoSalida);
-        assertEquals(odontologoSalidaDto.getId(), turnoSalida.getOdontologoSalidaDto().getId());
-        assertEquals(pacienteSalidaDto.getId(), turnoSalida.getPacienteSalidaDto().getId());
+        assertEquals(odontologoSalidaDto.getId(), turnoSalida.getOdontologo().getId());
+        assertEquals(pacienteSalidaDto.getId(), turnoSalida.getPaciente().getId());
     }
 
     @Test

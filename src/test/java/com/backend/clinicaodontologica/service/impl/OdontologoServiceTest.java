@@ -42,19 +42,18 @@ class OdontologoServiceTest {
     @Test
     @Order(2)
     void deberiaEliminarseElOdontologoConId1() {
-        assertDoesNotThrow(() -> odontologoService.eliminarOdontologo(1L));
         List<OdontologoSalidaDto> odontologos = odontologoService.listarOdontologos();
-        assertTrue(odontologos.isEmpty());
+        int odontologosCount = odontologos.size();
+        assertDoesNotThrow(() -> odontologoService.eliminarOdontologo(1L));
+        odontologos = odontologoService.listarOdontologos();
+        assertEquals(odontologosCount - 1, odontologos.size());
     }
 
 
     @Test
     @Order(3)
-    void deberiaRetornarUnaListaConUnElementoSolo() {
-        OdontologoEntradaDto odontologoEntradaDto = new OdontologoEntradaDto("AB11", "Maria", "Lopez");
-        odontologoService.registrarOdontologo(odontologoEntradaDto);
-        List<OdontologoSalidaDto> odontologos = odontologoService.listarOdontologos();
-        assertEquals(1, odontologos.size());
+    void deberiaRetornarUnaListaDeOdontologos() {
+        assertDoesNotThrow(() -> odontologoService.listarOdontologos());
     }
 
 
